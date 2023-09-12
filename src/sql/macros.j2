@@ -1,0 +1,29 @@
+{% macro clean_name(name_column) -%}
+REPLACE( {{ name_column }} , ' *', '')
+{%- endmacro %}
+
+{% macro select_height_in_feet_and_inches(height_column) -%}
+SPLIT_PART( {{ height_column }}, ' (', 1)
+{%- endmacro %}
+
+{% macro select_height_in_metres(height_column) -%}
+RTRIM(
+	REPLACE(
+		SPLIT_PART( {{height_column}} , ' (', 2)
+		, 'm)', ''
+	)
+)::DECIMAL(3, 2)
+{%- endmacro %}
+
+{% macro select_result_nextfight_status_type -%}
+CASE
+	WHEN LEFT(result_nextfight_status, 4) IN ('Win ', 'Loss') THEN 'previous'
+	WHEN LEFT(result_nextfight_status, 1) = '(' THEN 'Cancelled'
+	WHEN result_nextfight_status IS NULL THEN NULL 
+	ELSE 'upcoming'
+END
+{%- endmacro %}
+
+{%- macro extract_wins_from_record %}
+
+{% -%}

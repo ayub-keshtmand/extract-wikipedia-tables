@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+lxml = "*"
+pyyaml = "*"
+sqlalchemy = "*"
+psycopg2-binary = "*"
+python-decouple = "*"
+duckdb = "*"
+pyarrow = "*"
+boto3 = "*"
+jinja2 = "*"
+
+[dev-packages]
+pytest = "*"
+ipython = "*"
+black = "*"
+isort = "*"
+flake8 = "*"
+awscli = "*"
+awscli-local = "*"
+localstack = "*"
+
+[requires]
+python_version = "3.11"

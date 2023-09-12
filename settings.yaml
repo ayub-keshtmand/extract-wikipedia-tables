@@ -1,0 +1,50 @@
+log_level: INFO
+url_base: https://en.wikipedia.org
+sql_path: [src, sql]
+
+data_sources:
+  ufc:
+    path: /wiki/List_of_current_UFC_fighters
+    # Enter table names based on position of tables in the webpage
+    tables:
+    - recent_releases_and_retirements
+    - recent_signings
+    - suspended_fighters
+    - debuted_fighters_countries_of_origin
+    - rankings_1
+    - rankings_2
+    - current_champions_weight_classes_and_status
+    - debuted_fighters_heavyweights
+    - debuted_fighters_light_heavyweights
+    - debuted_fighters_middleweights
+    - debuted_fighters_welterweights
+    - debuted_fighters_lightweights
+    - debuted_fighters_featherweights
+    - debuted_fighters_bantamweights
+    - debuted_fighters_flyweights
+    - debuted_fighters_womens_featherweights
+    - debuted_fighters_womens_bantamweights
+    - debuted_fighters_womens_flyweights
+    - debuted_fighters_womens_strawweights
+  bellator:
+    path: /wiki/List_of_current_Bellator_MMA_fighters
+    tables:
+    - recent_signings
+    - rankings_1
+    - rankings_2
+    - current_champions_weight_classes_and_status
+    - current_heavyweights
+    - current_light_heavyweights
+    - current_middleweights
+    - current_welterweights
+    - current_lightweights
+    - current_featherweights
+    - current_bantamweights
+    - current_flyweights
+    - current_womens_featherweights
+    - current_womens_flywights
+    - current_womens_strawweights
+  pride_fc:
+    path: /wiki/List_of_Pride_FC_alumni
+    tables:
+    - alumni
